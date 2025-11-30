@@ -1,0 +1,17 @@
+.even{
+    background-color: steelblue;
+    color: white;
+}
+.odd{
+    background-color: orangered;
+    color: white;
+}
+
+table tr{
+    height: 50px;
+}
+
+table th, table td {
+  padding: 12px 18px; /* adds space inside the cells */
+  font-size: 16px;    /* text bigger = row looks bigger */
+}

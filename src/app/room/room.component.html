@@ -23,12 +23,27 @@
  
 <!-- {{roomList | json}} -->
 
-<div *ngIf="room.available > 0">
-Rooms List:
+<div *ngIf="selectedRoom">
+    <h2>The selected room by you..!</h2>
+    {{selectedRoom.roomType| json}}
+</div>
+
+<!-- In order to learn the onpush like how we are able to change the behaviour of the thigs -->
+
+<div>
+    <button type="button" class="btn btn-dark" (click)="addRoom()"> Click Here to ADD the rooms </button>
+</div>
+
+<hinv-rooms-list [rooms]="RoomList" [title]="title" (selectedRoom)="selectTheRooms($event)"></hinv-rooms-list>
+<!-- <div *ngIf="room.available > 0"> -->
+    
+    <!-- And here where we have to use the component -->
+
+<!-- Rooms List: -->
 <!-- {{RoomList}} -->
 <!-- Here comes the ngfor -->
 
-    <table>
+    <!-- <table>
         <tr>    
             <th>Index</th>
             <th>Modulo</th>
@@ -40,7 +55,7 @@ Rooms List:
             <th>check Out</th>   
         </tr>
 
-        <!-- Just the info that what are the things that the table or the ngfor is havign -->
+        Just the info that what are the things that the table or the ngfor is havign
         <tr [ngClass]=" e ? 'even' : 'odd'" *ngFor="let room of RoomList; let e=even ; let o=odd ; let i=index ">
             <td>{{i}}</td>
             <td>{{e ? 'Even' : 'Odd' }}</td>
@@ -52,5 +67,12 @@ Rooms List:
             <td>{{room.checkOutTime | date :'short'}}</td>
         </tr>
 
-    </table>
-</div>
+    </table> -->
+    <!-- This table is migrated to the right place to use this for multiple times and also 
+     want to understand the concept of the components communication..!-->
+
+
+<!-- </div> -->
+
+
+
